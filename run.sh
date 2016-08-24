@@ -18,7 +18,7 @@ exec 2>&1
 git clone https://github.com/svicario/phyloH.git -b "$GITBRANCH"
 
 # run the job execution
-python phyloH/esecutorePhyloHPandas.py -f "$PHYLOGENY_FILENAME" -s "$SAMPLE_FILENAME" -g "$GROUP_FILENAME" -q 1 -r 2 -o "$OUTPUT_PREFIX" -e 0 -k 0 
+python phyloH/esecutorePhyloHPandas.py -f "$PHYLOGENY_FILENAME" -s "$SAMPLE_FILENAME" -g "$GROUP_FILENAME" -q 1 -r "$Nrandomization" -o "$OUTPUT_PREFIX" -e 0 -k 0 
 
 # collect the output
 tar cvfz "$OUTPUT".tgz --ignore-failed-read external/ "$OUTPUT_PREFIX"* radial2.js "$LOG_FILE" 
