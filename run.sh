@@ -42,8 +42,9 @@ exec 2>&1
 git clone https://github.com/svicario/phyloH.git -b "$GITBRANCH"
 
 # run the job execution
-python phyloH/esecutorePhyloHPandas.py -H GRID_SIZE -M $MPOLYGON -G "$GEOADD" "$PHYLOGENY_FILENAME" -s "$SAMPLE_FILENAME" "$GROUP_FILENAME" -r "$NPERM" -o "$OUTPUT_PREFIX" -e "$EQUALQUANTITY" -k "$PAIRSWISE" "$TAXONOMY_FILENAME"
+echo "-H $GRID_SIZE -M $MPOLYGON -G $GEOADD $PHYLOGENY_FILENAME -s $SAMPLE_FILENAME $GROUP_FILENAME -r $NPERM -o $OUTPUT_PREFIX -e $EQUALQUANTITY -k $PAIRSWISE $TAXONOMY_FILENAME"
 
+python phyloH/esecutorePhyloHPandas.py -H $GRID_SIZE -M $MPOLYGON -G $GEOADD $PHYLOGENY_FILENAME -s $SAMPLE_FILENAME $GROUP_FILENAME -r $NPERM -o $OUTPUT_PREFIX -e $EQUALQUANTITY -k $PAIRSWISE $TAXONOMY_FILENAME
 # collect the output
 tar cvfz "$OUTPUT".tgz --ignore-failed-read external/ "$OUTPUT_PREFIX"* radial2.js "$LOG_FILE" 
 
