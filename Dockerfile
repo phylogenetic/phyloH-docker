@@ -5,7 +5,7 @@ MAINTAINER Marica Antonacci <marica.antonacci@gmail.com>
 ENTRYPOINT [] 
 CMD []
 
-RUN apt-get update && apt-get install -y --no-install-recommends python-pip g++ && \
+RUN apt-get update && apt-get install -y --no-install-recommends python-pip g++ git && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
