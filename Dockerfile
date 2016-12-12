@@ -1,4 +1,4 @@
-FROM geodata/grass
+FROM geodata/grass:7.0
 MAINTAINER Marica Antonacci <marica.antonacci@gmail.com>
 
 # reset inherited entrypoint and CMD
