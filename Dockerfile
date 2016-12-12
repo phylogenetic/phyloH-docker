@@ -1,7 +1,7 @@
-FROM python:2.7
+FROM geodata/grass
 MAINTAINER Marica Antonacci <marica.antonacci@gmail.com>
 
-RUN apt-get update && apt-get install -y --no-install-recommends g++ && \
+RUN apt-get update && apt-get install -y --no-install-recommends python-pip g++ && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
