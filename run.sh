@@ -43,9 +43,7 @@ git clone https://github.com/svicario/phyloH.git -b "$GITBRANCH"
 
 # run the job execution
 echo "-H $GRID_SIZE -M $MPOLYGON -G $GEOADD $PHYLOGENY_FILENAME -s $SAMPLE_FILENAME $GROUP_FILENAME -r $NPERM -o $OUTPUT_PREFIX -e $EQUALQUANTITY -k $PAIRSWISE $TAXONOMY_FILENAME"
-
-cd /grass
-ln -s $WORKDIR/* .
+ .
 
 python phyloH/esecutorePhyloHPandas.py -H $GRID_SIZE -M $MPOLYGON -G $GEOADD -f $PHYLOGENY_FILENAME -s $SAMPLE_FILENAME -g $GROUP_FILENAME -r $NPERM -o $OUTPUT_PREFIX -e $EQUALQUANTITY -k $PAIRSWISE $TAXONOMY_FILENAME
 # collect the output
