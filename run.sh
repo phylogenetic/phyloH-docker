@@ -28,7 +28,7 @@ if [ "$GROUP_FILENAME" != "" ]; then
 GROUP_FILENAME="-g $GROUP_FILENAME"
 fi
 
-
+echo WORK_DIR="$WORKDIR"
 cd "$WORKDIR"
 
 # Redirect stderr and stdout to the log file
@@ -43,7 +43,6 @@ git clone https://github.com/svicario/phyloH.git -b "$GITBRANCH"
 
 # run the job execution
 echo "-H $GRID_SIZE -M $MPOLYGON -G $GEOADD $PHYLOGENY_FILENAME -s $SAMPLE_FILENAME $GROUP_FILENAME -r $NPERM -o $OUTPUT_PREFIX -e $EQUALQUANTITY -k $PAIRSWISE $TAXONOMY_FILENAME"
- .
 
 python phyloH/esecutorePhyloHPandas.py -H $GRID_SIZE -M $MPOLYGON -G $GEOADD -f $PHYLOGENY_FILENAME -s $SAMPLE_FILENAME -g $GROUP_FILENAME -r $NPERM -o $OUTPUT_PREFIX -e $EQUALQUANTITY -k $PAIRSWISE $TAXONOMY_FILENAME
 # collect the output
