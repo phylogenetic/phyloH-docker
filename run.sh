@@ -31,6 +31,8 @@ fi
 echo WORK_DIR="$WORKDIR"
 cd "$WORKDIR"
 
+tar xvfz terr-ecoregions-TNC.tar.gz
+
 # Redirect stderr and stdout to the log file
 exec 1<&-
 exec 2<&-
