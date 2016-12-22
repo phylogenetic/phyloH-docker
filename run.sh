@@ -28,8 +28,10 @@ if [ "$GROUP_FILENAME" != "" ]; then
 GROUP_FILENAME="-g $GROUP_FILENAME"
 fi
 
-
+echo WORK_DIR="$WORKDIR"
 cd "$WORKDIR"
+
+tar xvfz terr-ecoregions-TNC.tar.gz
 
 # Redirect stderr and stdout to the log file
 exec 1<&-
