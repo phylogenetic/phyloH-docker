@@ -48,7 +48,7 @@ echo "-H $GRID_SIZE -M $MPOLYGON -G $GEOADD $PHYLOGENY_FILENAME -s $SAMPLE_FILEN
 
 python phyloH/esecutorePhyloHPandas.py -H $GRID_SIZE -M $MPOLYGON -G $GEOADD $PHYLOGENY_FILENAME -s $SAMPLE_FILENAME $GROUP_FILENAME -r $NPERM -o $OUTPUT_PREFIX -e $EQUALQUANTITY -k $PAIRSWISE $TAXONOMY_FILENAME
 # collect the output
-tar cvfz "$OUTPUT".tgz --ignore-failed-read external/ "$OUTPUT_PREFIX"* PhyloCommunity.js sample sub* decorated* "$SAMPLE_FILENAME"* "$LOG_FILE" 
+tar cvfz "$OUTPUT".tgz --ignore-failed-read external/ "$OUTPUT_PREFIX"* PhyloCommunity.js sample sub* */decorated* "$SAMPLE_FILENAME"* "$LOG_FILE" 
 
 # upload the output to the Object Storage
 swift --insecure upload "$OUTPUT" "$OUTPUT".tgz 
